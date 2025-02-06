@@ -4,10 +4,36 @@
 // iedereen: https://fdnd.directus.app/items/person/?fields=id,name,github_handle,avatar&filter={%22squads%22:{%22squad_id%22:{%22name%22:%22Minor%20Web%20Dev%22}}}&sort=name
 
 const baseURL = 'https://fdnd.directus.app/';
-const endpointMe = 'items/person/67';
+const endpointMe = 'items/person/211';
+
+// splits de url
+
+const myURL = baseURL + endpointMe;
+
+// plakt de url weer aan elkaar en geef hem een naampje zodat je hem later weer kan zoeken, 
+// base is waar komt de info vandaan, endpoint is welke info je wilt uit de data base
+
+
+getData(myURL).then(lilData => {
+	// mijn url heb ik lilData genoemt en als ik lilData neerzet zoekt hij in de personen data base 211 mijn nummer
 
 
 
+
+	let deH1 = document.querySelector("h1");
+	// je spreekt de h1 in je html aan en die geef je een naampje om aan te spreken
+
+	let myName = lilData.data.name;
+	// de myName zoekt in de data jou naam 
+
+	deH1.textContent = myName;
+	// je koppelt de h1 aan de myName waardoor je in het h1 vlakje de naam die gekoppeld is aan je nummer krijgt
+	// de content van de h1 vervang je met de data die je van de api heb gekregen
+
+
+
+	// console.log(myName);
+});
 
 
 
